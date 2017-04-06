@@ -1,18 +1,23 @@
 package com.example.xiaotinghong.rotategesturedetector;
 
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String TAG = "Move Gesture Detector";
+    private static String TAG = "Rotate Gesture Detector";
 
     List<ImageView> allImageViews;
     private ImageView selectedImageView;
@@ -48,12 +53,15 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     private void updateSelectedImageView(MotionEvent event) {
         final int action = MotionEventCompat.getActionMasked(event);
 
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
-                selectedImageView = selectImageViewOnEvent(event);
+                if(!rotateGestureDetector.isInProgress()) {
+                    selectedImageView = selectImageViewOnEvent(event);
+                }
                 break;
             }
             case MotionEvent.ACTION_UP: {
@@ -69,10 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
         for(ImageView imageView: allImageViews) {
             // Calculate the hit rect of the current image view
-            int[] screenLocation = new int[2];
-            imageView.getLocationOnScreen(screenLocation);
-            Rect hitRect = new Rect(screenLocation[0], screenLocation[1],
-                    screenLocation[0] + imageView.getWidth(), screenLocation[1] + imageView.getHeight());
+            Rect hitRect = new Rect();
+            imageView.getHitRect(hitRect);
 
             // check if the touch point land within the hit rect
             if( hitRect.contains((int) touchX, (int) touchY) ) {
