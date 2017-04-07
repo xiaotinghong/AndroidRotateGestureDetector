@@ -3,7 +3,7 @@ An Android rotate gesture detector, and it's presented with the sample of rotati
 
 Since there is no build-in RotateGestureDetector in current Android Kit, I decided to write one myself. This RotateGestureDetector is created based on the official ScaleGestureDetector https://developer.android.com/reference/android/view/ScaleGestureDetector.html.
 
-I also create a MoveGestureDetector here: https://github.com/xiaotinghong/AndroidMoveGestureDetector
+I also created a MoveGestureDetector here: https://github.com/xiaotinghong/AndroidMoveGestureDetector
 
 The way you can use the RotateGestureDetector is very similar to use the ScaleGestureDetector since they have similar structure.
 
