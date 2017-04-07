@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.image_view);
 
-        rotateGestureDetector = new RotateGestureDetector(this, new MoveListener());
+        rotateGestureDetector = new RotateGestureDetector(this, new RotateListener());
     }
 
     @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private class MoveListener extends RotateGestureDetector.SimpleOnRotateGestureListener {
+    private class RotateListener extends RotateGestureDetector.SimpleOnRotateGestureListener {
         @Override
         public boolean onRotate(RotateGestureDetector detector) {
             // The operations based on rotate gesture go here
