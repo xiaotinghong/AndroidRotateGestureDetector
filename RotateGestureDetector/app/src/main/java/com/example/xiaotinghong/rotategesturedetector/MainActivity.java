@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         if (rotateGestureDetector != null) {
             rotateGestureDetector.onTouchEvent(event);
         }
-
         return true;
     }
 
