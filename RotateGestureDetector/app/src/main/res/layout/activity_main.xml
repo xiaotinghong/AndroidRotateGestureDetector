@@ -4,35 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- It's important to set
-    the attribute "adjustViewBounds" as "true" -->
-
     <ImageView
-        android:id="@+id/image_view_1"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/android_icon"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"/>
-
-    <ImageView
-        android:id="@+id/image_view_2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/image_view_1"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/android_icon"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"/>
-
-    <ImageView
-        android:id="@+id/image_view_3"
+        android:id="@+id/image_view"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"
         android:src="@drawable/android_icon"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"/>
